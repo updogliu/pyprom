@@ -10,6 +10,8 @@
 4. See the `Latency` dashboard: Home > Dashboards > Latency.
    Give it 5 minutes to collect enough data samples to draw meaningful graphs.
 
+<img width="1500" alt="image" src="https://github.com/updogliu/pyprom/assets/1288299/bf026656-02c9-427b-86ed-0e496bec1c0b">
+
 # Grafana
 
 http://localhost:3000/
@@ -21,4 +23,3 @@ Password: `hello`
 # Prometheus expression browser
 http://localhost:9090/graph
 
-<img width="1910" alt="image" src="https://github.com/updogliu/pyprom/assets/1288299/bf026656-02c9-427b-86ed-0e496bec1c0b">
