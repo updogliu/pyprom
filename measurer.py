@@ -17,6 +17,7 @@ def generate_latency():
     return abs(rng.normal()*5)
 
 if __name__ == '__main__':
+    print("Exporting the latency metrics at localhost:8000")
     start_http_server(8000)
 
     while True:
