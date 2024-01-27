@@ -1,20 +1,23 @@
 import time
 import random
-from prometheus_client import start_http_server, Summary, Counter, Histogram
+import numpy as np
+from prometheus_client import start_http_server, Gauge, Histogram
 
-REQUEST_TIME = Summary('request_processing_seconds', 'Time spent processing request')
+rng = np.random.default_rng()
+h = Histogram('my_request_latency_hist', 'Histogram of the latency')
+g = Gauge('my_request_latency_gauge', 'Gauge of the real time latency')
 
-c = Counter('my_requests_total', 'HTTP Failures', ['method', 'endpoint'])
-h = Histogram('my_request_latency_seconds', 'Description of histogram')
 
-
-@REQUEST_TIME.time()
 def process_request(t):
-    c.labels(method='get', endpoint='/fake').inc()
-    h.observe(2.5 + t)
-    time.sleep(t)
+    h.observe(t)
+    g.set(t)
+    time.sleep(t if t < 1 else 1)
+
+def generate_latency():
+    return abs(rng.normal()*5)
 
 if __name__ == '__main__':
     start_http_server(8000)
+
     while True:
-        process_request(random.random())
+        process_request(generate_latency())
