@@ -1,0 +1,6 @@
+# A scrape configuration containing exactly one endpoint to scrape.
+scrape_configs:
+  - job_name: 'measurer'
+    scrape_interval: 2s
+    static_configs:
+      - targets: ['host.docker.internal:8000']  # host.docker.internal resolves to the host

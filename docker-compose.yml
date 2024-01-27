@@ -1,0 +1,17 @@
+version: '3'
+
+volumes:
+    prometheus_data: {}
+    #grafana_data: {}
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.49.1
+    container_name: prometheus
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports: ["9090:9090"]
