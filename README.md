@@ -1,8 +1,7 @@
 # How to play
 
-1. Install the python packages
-
-pip install -r requirements.txt
+1. Install the python packages:
+   `pip install -r requirements.txt`
 
 2. In the root directory of this repo, run `run.sh`.
 
@@ -15,8 +14,11 @@ pip install -r requirements.txt
 
 http://localhost:3000/
 
-Username: admin
-Password: hello
+Username: `admin`
+
+Password: `hello`
 
 # Prometheus expression browser
 http://localhost:9090/graph
+
+<img width="1910" alt="image" src="https://github.com/updogliu/pyprom/assets/1288299/bf026656-02c9-427b-86ed-0e496bec1c0b">
