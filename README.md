@@ -28,7 +28,7 @@ If you want to persist changed or new dashboard,
 you can export them as JSON files (see
 [here](https://grafana.com/docs/grafana/latest/dashboards/manage-dashboards/#export-and-import-dashboards)
 for how to do it) into `./grafana/provisioning/dashboards` of this repo.
-When the next time you create the containers, those dashboard will be already there.
+When the next time you create the containers, those dashboards will be already there.
 
 # Prometheus expression browser
 http://localhost:9090/graph
